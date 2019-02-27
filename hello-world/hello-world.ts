@@ -1,6 +1,5 @@
 class HelloWorld {
-    static hello( /* Parameters go here */name = 'World' ) {
-        // Your code here
+    static hello(name = 'World' ) {
         return `Hello, ${name}!`
     }
 }
