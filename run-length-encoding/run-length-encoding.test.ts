@@ -57,19 +57,19 @@ describe("run-length decode a string", () => {
     expect(RunLengthEncoding.decode("12WB12W3B24WB")).toEqual(expected)
   })
 
-  xit("multiple whitespace mixed in string", () => {
+  it("multiple whitespace mixed in string", () => {
     const expected = "  hsqq qww  "
     expect(RunLengthEncoding.decode("2 hs2q q2w2 ")).toEqual(expected)
   })
 
-  xit("lower case string", () => {
+  it("lower case string", () => {
     const expected = "aabbbcccc"
     expect(RunLengthEncoding.decode("2a3b4c")).toEqual(expected)
   })
 })
 
 describe("encode and then decode", () => {
-  xit("encode followed by decode gives original string", () => {
+  it("encode followed by decode gives original string", () => {
     expect(
       RunLengthEncoding.decode(RunLengthEncoding.encode("zzz ZZ  zZ"))
     ).toEqual("zzz ZZ  zZ")

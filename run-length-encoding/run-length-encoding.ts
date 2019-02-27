@@ -19,16 +19,19 @@ class Encoding {
   public static decode(str: string): string {
     let result = ""
     let counter = 0
-    const reg = /[a-zA-Z]/g
+    const reg = /[a-zA-Z]|\s/g
     const numArray: string[] = str.split(reg)
-    for (let i = 0; i < numArray.length; i++) {
+    // console.log('numArray is ',numArray);
+    for (let i = 0; i < numArray.length-1; i++) {
       if (numArray[i] === "") {
-        result += str[i]
+        result += str[counter]
         counter++
       } else {
         result += Array(parseInt(numArray[i], 10) + 1).join(
-          str[numArray[i].length + counter]
+          str[counter+numArray[i].length]
         )
+        counter = counter + numArray[i].length+1
+        // console.log('result is ',result)
       }
     }
     return result
