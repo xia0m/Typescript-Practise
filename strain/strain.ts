@@ -1,7 +1,7 @@
-export function keep<T>(value,fn){
-  return value.filter(fn)
+export function keep<T>(value: T[], callback: (n: T) => boolean): T[] {
+  return value.filter(callback)
 }
 
-export function discard<T>(value,fn){
-  return undefined
+export function discard<T>(value: T[], callback: (n: T) => boolean): T[] {
+  return value.filter(callback)
 }
