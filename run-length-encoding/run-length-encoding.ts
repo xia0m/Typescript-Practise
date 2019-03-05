@@ -22,15 +22,15 @@ class Encoding {
     const reg = /[a-zA-Z]|\s/g
     const numArray: string[] = str.split(reg)
     // console.log('numArray is ',numArray);
-    for (let i = 0; i < numArray.length-1; i++) {
+    for (let i = 0; i < numArray.length - 1; i++) {
       if (numArray[i] === "") {
         result += str[counter]
         counter++
       } else {
         result += Array(parseInt(numArray[i], 10) + 1).join(
-          str[counter+numArray[i].length]
+          str[counter + numArray[i].length]
         )
-        counter = counter + numArray[i].length+1
+        counter = counter + numArray[i].length + 1
         // console.log('result is ',result)
       }
     }
